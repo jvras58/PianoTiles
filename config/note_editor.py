@@ -61,6 +61,15 @@ naruto_theme = ['a4', 'b4', 'a4', 'g4', 'e4', 'g4', 'a4', 'd4',\
                 'a3', 'b3', 'g3', 'a4', 'b4', 'a4', 'g4', 'e4',\
                 'g4', 'a4', 'd4', 'c4', 'd4', 'c4', 'a3']
 
+# BPM e intervalo entre notas (em milissegundos) para cada música
+music_timing = {
+    '1': {'bpm': 120, 'note_interval': 500},  # Twinkle Twinkle
+    '2': {'bpm': 120, 'note_interval': 500},  # Happy Birthday
+    '3': {'bpm': 100, 'note_interval': 300},  # Jan Gan Man
+    '4': {'bpm': 110, 'note_interval': 400},  # O Mere Dil Ke Chain
+    '5': {'bpm': 140, 'note_interval': 350},  # Naruto Theme
+}
+
 notes = {
     '1' : twinkle_twinkle,
     '2' : happy_birthday,
@@ -69,5 +78,11 @@ notes = {
     '5' : naruto_theme
 }
 
+# Salvar notas e configurações de timing
+data = {
+    'notes': notes,
+    'timing': music_timing
+}
+
 with open('notes.json', 'w') as file:
-    json.dump(notes, file)
+    json.dump(data, file, indent=2)

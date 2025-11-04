@@ -12,13 +12,16 @@ BLUE2 = (25, 239, 239)
 PURPLE = (191, 64, 191)
 
 class Tile(pygame.sprite.Sprite):
-	def __init__(self, x, y, win):
+	def __init__(self, x, y, win, note='', target_time=0):
 		super(Tile, self).__init__()
 
 		self.win = win
 		self.x, self.y = x, y
 		self.color = BLACK
 		self.alive = True
+		self.note = note  # Nota musical associada a este tile
+		self.target_time = target_time  # Tempo (em ms) quando esta nota deve ser tocada
+		self.played = False  # Se a nota já foi tocada
 
 		self.surface = pygame.Surface((TILE_WIDTH, TILE_HEIGHT), pygame.SRCALPHA)
 		self.rect = self.surface.get_rect()
