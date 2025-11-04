@@ -8,6 +8,10 @@ uv sync
 
 ## Usage
 
+```bash
+    uv run python main.py
+```
+
 Dê um duplo clique no arquivo game.py para abrir o jogo. Clique em "Iniciar" para começar a jogar. O objetivo do jogo é clicar nas peças sem clicar em nenhum outro lugar na tela para gerar notas musicais. Além disso, se uma peça tocar o chão sem ser clicada, o jogo termina.
 
 Controle:
