@@ -4,6 +4,7 @@ import pygame
 from threading import Thread
 
 from config.objects import Tile, Square, Text, Button, Counter
+from config.music_loader import load_music_notes
 
 pygame.init()
 SCREEN = WIDTH, HEIGHT = 288, 512
@@ -155,7 +156,7 @@ while running:
 
             pos = None
 
-            notes_list = notes_dict["2"]
+            notes_list = load_music_notes()
             note_count = 0
             pygame.mixer.set_num_channels(len(notes_list))
 
@@ -233,7 +234,7 @@ while running:
 
                     if replay_btn.draw(win):
                         index = random.randint(1, len(notes_dict))
-                        notes_list = notes_dict[str(index)]
+                        notes_list = load_music_notes()
                         note_count = 0
                         pygame.mixer.set_num_channels(len(notes_list))
 
