@@ -8,7 +8,7 @@ from config.note_editor import (
 )
 
 
-def load_music_notes(sounds_dir: str = "config/Sounds") -> List[str]:
+def load_music_notes(sounds_dir: str = "config/Sounds/midi") -> List[str]:
     """
     Carrega notas de um arquivo MIDI ou usa fallback de notes.json.
 
